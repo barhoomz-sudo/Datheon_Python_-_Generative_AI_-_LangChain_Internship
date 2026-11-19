@@ -1,0 +1,12 @@
+INVOICE
+
+Invoice Number: INV-004
+Company: Barhoomz Education
+Customer: Ahmed Ali
+
+Items:
+Python Course - $150
+Web Development - $200
+
+Total: $359
+Payment Status: Paid
