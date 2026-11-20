@@ -1,8 +1,8 @@
-from pydantic import BaseModel, model_validator
+from pydantic import BaseModel, model_validator, Field
 
 class InvoiceItem(BaseModel):
     description: str
-    price: float
+    price: float = Field(gt=0)
 
 class Invoice(BaseModel):
     invoice_number: str
@@ -19,6 +19,12 @@ class Invoice(BaseModel):
         if self.total != items_total:
             raise ValueError(f"Invoice total ({self.total}) does not match "
     f"the sum of items ({items_total}).")
+        return self
+
+    @model_validator(mode="after")
+    def check_items(self):
+        if not self.items:
+            raise ValueError("Invoice must contain at least one item!")
         return self
 
 
