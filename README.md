@@ -89,7 +89,7 @@ pip install -r requirements.txt
 Create a `.env` file in the project root:
 
 ```env
-GEMINI_API=your_gemini_api_key
+GEMENAI_API=your_gemini_api_key
 ```
 
 Never commit your actual API key to GitHub.
